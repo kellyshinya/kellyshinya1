@@ -6,7 +6,7 @@
 	<title>小兒科表單</title>
 </head>
 
-<body background="https://png.pngtree.com/element_origin_min_pic/16/11/18/7fe49593530b0b0b63da498f9ee8573c.jpg">
+<body background="https://png.pngtree.com/element_origin_min_pic/16/12/16/4c85cc3f36f6af02ea1f1c10fc1e82ee.jpg">
 
 
 名字:
@@ -24,11 +24,12 @@
 體重:
 <input type="text" name="weigth" size="10" /><br>
 <br>
-性別:<br>
+
+性別:<br><br>
 <input type="radio" name="sex" value="m" />男 
 <input type="radio" name="sex" value="f" />女<br>
 <br>
-症狀:<br>
+症狀:<br><br>
 <input type="checkbox" name="inte1" value="1">流鼻涕
 <input type="checkbox" name="inte2" value="2">咳嗽
 <input type="checkbox" name="inte3" value="3">肚子痛
@@ -36,13 +37,14 @@
 <input type="checkbox" name="inte5" value="5">躁動哭鬧
 <input type="checkbox" name="inte6" value="6">活動力變差
 <input type="checkbox" name="inte7" value="7">淺眠或失眠
+<br>
 <input type="checkbox" name="inte8" value="8">呼吸急促
 <input type="checkbox" name="inte9" value="9">小便減少
 <input type="checkbox" name="inte10" value="10">哭泣卻沒有眼淚
 <input type="checkbox" name="inte11" value="11">食量減少
 <br><br>
  
-體溫:<br>
+體溫:
 <input type="text" name="num" size="10" /><br>
 有無腹瀉:<br> 
 <input type="radio" name="Yesshit" value="YY" />有  次數:<input type="text" name="time" size="10" /><br>
