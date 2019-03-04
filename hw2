@@ -8,24 +8,27 @@
 
 <body background="https://png.pngtree.com/element_origin_min_pic/16/11/18/7fe49593530b0b0b63da498f9ee8573c.jpg">
 
-<img src="https://photo.518.com.tw/photo/2/370/2570797/14132742951697189032.jpg"><br>
 
-名字:<br>
+名字:
 <input type="text" name="id" size="10" /><br>
-年齡:<br>
+<br>
+年齡:
 <input type="text" name="age" size="10" /><br>
-生日:<br>
+<br>
+生日:
 <input type="text" name="birth" size="10" /><br>
-身高:<br>
+<br>
+身高:
 <input type="text" name="tall" size="10" /><br>
-體重:<br>
+<br>
+體重:
 <input type="text" name="weigth" size="10" /><br>
-
-性別:<br> 
+<br>
+性別:<br>
 <input type="radio" name="sex" value="m" />男 
 <input type="radio" name="sex" value="f" />女<br>
-
-症狀:
+<br>
+症狀:<br>
 <input type="checkbox" name="inte1" value="1">流鼻涕
 <input type="checkbox" name="inte2" value="2">咳嗽
 <input type="checkbox" name="inte3" value="3">肚子痛
@@ -37,28 +40,30 @@
 <input type="checkbox" name="inte9" value="9">小便減少
 <input type="checkbox" name="inte10" value="10">哭泣卻沒有眼淚
 <input type="checkbox" name="inte11" value="11">食量減少
-<br>
+<br><br>
  
 體溫:<br>
 <input type="text" name="num" size="10" /><br>
 有無腹瀉:<br> 
 <input type="radio" name="Yesshit" value="YY" />有  次數:<input type="text" name="time" size="10" /><br>
 <input type="radio" name="Noshit" value="NN" />無<br>
-
+<br>
 家族病史或是曾經生過什麼重病:<br>
 <input type="text" name="sick" size="30" /><br>
-
+<br>
 有無藥物過敏:<br> 
 <input type="radio" name="Yes" value="Y" />有 
 <input type="radio" name="No" value="N" />無<br>
-
-聯絡人:<br>
+<br>
+聯絡人:
 <input type="text" name="Familyid" size="10" /><br>
-與孩童關係:<br>
+<br>
+與孩童關係:
 <input type="text" name="Family" size="10" /><br>
-連絡電話:<br>
+<br>
+連絡電話:
 <input type="text" name="Familyphone" size="10" /><br>
-
+<br>
 <h4><a href="https://www.pediatr.org.tw/">小兒科相關參考網站</a><h4>
 
 </body>
