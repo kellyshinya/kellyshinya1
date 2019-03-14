@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>小兒科表單</title>
+</head>
+
+    <SCRIPT type="text/javascript">
+       <!-- 此check()函式在最後的「傳送」案鈕會用到 -->
+    function check()
+    {
+       
+        if(reg.名字.value == "") 
+        {
+            alert("未輸入姓名");
+        }
+       
+        else form1.submit();
+    }
+</SCRIPT>
+<body background="http://pic.616pic.com/bg_w1180/00/16/73/fqhM2Y7x0C.jpg">
+
+
+    <form id="orderForm1" name="reg" method="post" action="http://203.64.84.113/x/RQ_RS.aspx">
+<br><u>小兒科表單填寫</u><br>
+<br><br>
+姓名:
+<input name="名字" type="text" size="16" /><br>
+<br>   
+
+年齡:
+<input type="text" name="年齡" size="10" /><br>
+<br>
+生日:
+<input type="text" name="生日" size="10" /><br>
+<br>
+身高:
+<input type="text" name="身高" size="10" /><br>
+<br>
+體重:
+<input type="text" name="體重" size="10" /><br>
+<br>
+	
+是否已就學:
+<select id= "stuYN" name="是否已就學">
+<option value="是" >是
+<option value="否" selected>否
+</select>
+<br><br>
+	
+性別:<br><br>
+<input type="radio" name="性別" value="男" />男 
+<input type="radio" name="性別" value="女" />女<br>
+<br>
+症狀:<br><br>
+<input type="checkbox" name="症狀" value="流鼻涕">流鼻涕
+<input type="checkbox" name="症狀" value="咳嗽">咳嗽
+<input type="checkbox" name="症狀" value="肚子痛">肚子痛
+<input type="checkbox" name="症狀" value="頭痛">頭痛
+<input type="checkbox" name="症狀" value="躁動哭鬧">躁動哭鬧
+<input type="checkbox" name="症狀" value="活動力變差">活動力變差
+<input type="checkbox" name="症狀" value="淺眠或失眠">淺眠或失眠
+<br>
+<input type="checkbox" name="症狀" value="呼吸急促">呼吸急促
+<input type="checkbox" name="症狀" value="小便減少">小便減少
+<input type="checkbox" name="症狀" value="哭泣卻沒有眼淚">哭泣卻沒有眼淚
+<input type="checkbox" name="症狀" value="食量減少">食量減少
+<br><br>
+ 
+體溫:
+<input type="text" name="體溫" size="10" /><br>
+有無腹瀉:<br> 
+<input type="radio" name="有無腹瀉" value="有" />有  次數:<input type="text" name="腹瀉次數" size="10" /><br>
+<input type="radio" name="有無腹瀉" value="無" />無<br>
+<br>
+家族病史或是曾經生過什麼重病:<br>
+<input type="text" name="家族病史或是曾經生過什麼重病" size="30" /><br>
+<br>
+有無藥物過敏:<br> 
+<input type="radio" name="有無藥物過敏" value="有" />有 
+<input type="radio" name="有無藥物過敏" value="無" />無<br>
+<br>
+聯絡人:
+<input type="text" name="聯絡人名字" size="10" /><br>
+<br>
+與孩童關係:
+<input type="text" name="與孩童關係" size="10" /><br>
+<br>
+連絡電話:
+<input type="text" name="連絡電話" size="10" /><br>
+<br>
+<input type="submit" value="傳送" onClick="check()" /> &nbsp;&nbsp;&nbsp;
+<input type="reset" value="清除" />
+
+<h4><a href="https://www.pediatr.org.tw/">小兒科相關參考網站</a><h4>
+
+
+    </form>
+</body>
+</html>
+ 
