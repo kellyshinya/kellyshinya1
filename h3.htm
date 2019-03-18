@@ -7,16 +7,27 @@
 
     <SCRIPT type="text/javascript">
        <!-- 此check()函式在最後的「傳送」案鈕會用到 -->
-    function check()
-    {
-       
-        if(reg.名字.value == "") 
-        {
+    function check() {
+
+        if (reg.名字.value == "") {
             alert("未輸入姓名");
         }
-       
+   
         else form1.submit();
+
+
     }
+    function check1() {
+
+        if (isNaN(reg.連絡電話.value))
+        {
+            alert("記得要輸入數字歐!!");
+
+        }
+        else form1.submit();
+
+    }
+
 </SCRIPT>
 <body background="http://pic.616pic.com/bg_w1180/00/16/73/fqhM2Y7x0C.jpg">
 
@@ -25,14 +36,16 @@
 <br><u>小兒科表單填寫</u><br>
 <br><br>
 姓名:
-<input name="名字" type="text" size="16" /><br>
+<input type="text" id="名字" size="10">
+<br>
+
 <br>   
 
 年齡:
 <input type="text" name="年齡" size="10" /><br>
 <br>
 生日:
-<input type="text" name="生日" size="10" /><br>
+<input type="text" name="生日"  id="生日" size="10" /><br>
 <br>
 身高:
 <input type="text" name="身高" size="10" /><br>
@@ -87,10 +100,20 @@
 <input type="text" name="與孩童關係" size="10" /><br>
 <br>
 連絡電話:
-<input type="text" name="連絡電話" size="10" /><br>
+<input type="text" name="連絡電話"  id="連絡電話" size="10" /><br>
 <br>
-<input type="submit" value="傳送" onClick="check()" /> &nbsp;&nbsp;&nbsp;
-<input type="reset" value="清除" />
+
+<input type="submit" value="傳送" /> &nbsp;&nbsp;&nbsp;
+<input type="submit" value="名字傳送" onClick="check()" /> &nbsp;&nbsp;&nbsp;
+<input type="submit" value="電話傳送" onClick="check1()" /> &nbsp;&nbsp;&nbsp;
+<input type="reset" value="清除" />&nbsp;&nbsp;&nbsp;
+<input type="button" value="輸入所有資料" onclick="javascript: getElementById('名字').value = '555'";>: 
+
+
+
+     
+         
+         
 
 <h4><a href="https://www.pediatr.org.tw/">小兒科相關參考網站</a><h4>
 
@@ -98,4 +121,3 @@
     </form>
 </body>
 </html>
- 
