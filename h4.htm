@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>小兒科病患資料表單</title>
-</head>
+    <meta charset="utf-8">
+    <title>小兒科病患資料表單</title>
+    <style>
+        table, td {
+            border: 1px solid black;
+        }
 
+        td {
+            width: 300px;
+            height: 50px;
+        }
+    </style>
+</head>
     應診類別:
 <select>
-
-  <option value="morning">日診</option>
-  <option value="night">夜診</option>
-  <option value="acute">急診</option>
+    <option value="morning">日診</option>
+    <option value="night">夜診</option>
+    <option value="acute">急診</option>
 </select>
-
-    <SCRIPT type="text/javascript">
-       <!-- 此check()函式在最後的「傳送」案鈕會用到 -->
+<SCRIPT type="text/javascript">
+     //  <!-- 此check()函式在最後的「傳送」案鈕會用到 -->
     function check() {
 
         if (reg.名字.value == "") {
@@ -197,102 +204,115 @@
     //alert(h + w);
     var bmi = w /((h*0.01)*(h*0.01));
     alert('您的BMI= '+bmi+'\n');
-    
-}
 
+}
+    function printChecked() {
+       
+            var items = document.getElementsByName('症狀');
+            var selectedItems = "";
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].type == 'checkbox' && items[i].checked == true)
+                    selectedItems += "症狀ID="+ items[i].id +"  "+"症狀Value="+ items[i].value + ',';
+            }
+            var table = document.getElementById("myTable");
+            for (var i = 1; i <= 1 ; i++) {
+                var row = table.insertRow(-1);
+                for (var j = 1; j <= 1; j++) {
+                    var cell = row.insertCell(-1);
+                    cell.innerHTML = selectedItems;
+                }
+            }
+        
+        }
+    
 
 </SCRIPT>
-
 <body background="http://pic.616pic.com/bg_w1180/00/16/73/fqhM2Y7x0C.jpg">
-
 
     <form id="orderForm1" name="reg" method="post" action="http://203.64.84.113/x/RQ_RS.aspx">
 
-         
-<br><u>小兒科表單填寫</u><br>
-<br><br>
-姓名:
-<input type="text" id="名字" size="10">
-<br>
+        <br><u>小兒科表單填寫</u><br>
+        <br><br>
+        姓名:
+        <input type="text" id="名字" size="10">
+        <br>
+        <br>
+        年齡:
+        <input type="text" name="年齡" id="年齡" size="10" /><br>
+        <br>
+        生日:
+        <input type="text" name="生日" id="生日" size="10" /><br>
+        <br>
+        身高:
+        <input type="text" name="身高" id="身高" size="10" /><br>
+        <br>
+        體重:
+        <input type="text" name="體重" id="體重" size="10" /><br>
+        <br>
 
-<br>   
+        是否已就學:
+        <select id="stuYN" name="是否已就學">
+            <option value="是">是
+            <option value="否" selected>否
+        </select>
+        <br><br>
 
-年齡:
-<input type="text" name="年齡" id="年齡" size="10" /><br>
-<br>
-生日:
-<input type="text" name="生日"  id="生日" size="10" /><br>
-<br>
-身高:
-<input type="text" name="身高"id="身高" size="10" /><br>
-<br>
-體重:
-<input type="text" name="體重" id="體重"size="10" /><br>
-<br>
-	
-是否已就學:
-<select id= "stuYN" name="是否已就學">
-<option value="是" >是
-<option value="否" selected>否
-</select>
-<br><br>
-	
-性別:<br><br>
-<input type="radio" name="性別" id="M" value="男" />男 
-<input type="radio" name="性別" id="F" value="女" />女<br>
-<br>
-症狀:<br><br>
-<input type="checkbox" name="症狀" id="a1" value="流鼻涕">流鼻涕
-<input type="checkbox" name="症狀" id="a2" value="咳嗽">咳嗽
-<input type="checkbox" name="症狀" id="a3" value="肚子痛">肚子痛
-<input type="checkbox" name="症狀" id="a4" value="頭痛">頭痛
-<input type="checkbox" name="症狀" id="a5" value="躁動哭鬧">躁動哭鬧
-<input type="checkbox" name="症狀" id="a6" value="活動力變差">活動力變差
-<input type="checkbox" name="症狀" id="a7" value="淺眠或失眠">淺眠或失眠
-<br>
-<input type="checkbox" name="症狀" id="a8" value="呼吸急促">呼吸急促
-<input type="checkbox" name="症狀" id="a9" value="小便減少">小便減少
-<input type="checkbox" name="症狀" id="a10" value="哭泣卻沒有眼淚">哭泣卻沒有眼淚
-<input type="checkbox" name="症狀" id="a11" value="食量減少">食量減少
-<br><br>
- 
-體溫:
-<input type="text" name="體溫" id="體溫"  size="10" /><br>
-<br> 
-有無腹瀉:<br> 
-<input type="radio" name="有無腹瀉" id="YY" value="有" />有  次數:<input type="text" id="有無腹瀉" name="腹瀉次數" size="10" /><br>
-<input type="radio" name="有無腹瀉" id="NN" value="無" />無<br>
-<br>
-家族病史或是曾經生過什麼重病:<br>
-<input type="text" name="家族病史或是曾經生過什麼重病" id="家族病史或是曾經生過什麼重病" size="30" /><br>
-<br>
-有無藥物過敏:<br> 
-<input type="radio" name="有無藥物過敏"  id="Y" value="有" />有 
-<input type="radio" name="有無藥物過敏"  id="N" value="無" />無<br>
-<br>
-聯絡人:
-<input type="text" name="聯絡人名字" id="聯絡人" size="10" /><br>
-<br>
-與孩童關係:
-<input type="text" name="與孩童關係" id="與孩童關係" size="10" /><br>
-<br>
-連絡電話:
-<input type="text" name="連絡電話"  id="連絡電話" size="10" /><br>
-<br>
+        性別:<br><br>
+        <input type="radio" name="性別" id="M" value="男" />男
+        <input type="radio" name="性別" id="F" value="女" />女<br>
+        <br>
+        症狀:<br><br>
+        <input type="checkbox" name="症狀" id="a1" value="流鼻涕">流鼻涕
+        <input type="checkbox" name="症狀" id="a2" value="咳嗽">咳嗽
+        <input type="checkbox" name="症狀" id="a3" value="肚子痛">肚子痛
+        <input type="checkbox" name="症狀" id="a4" value="頭痛">頭痛
+        <input type="checkbox" name="症狀" id="a5" value="躁動哭鬧">躁動哭鬧
+        <input type="checkbox" name="症狀" id="a6" value="活動力變差">活動力變差
+        <input type="checkbox" name="症狀" id="a7" value="淺眠或失眠">淺眠或失眠
+        <br>
+        <input type="checkbox" name="症狀" id="a8" value="呼吸急促">呼吸急促
+        <input type="checkbox" name="症狀" id="a9" value="小便減少">小便減少
+        <input type="checkbox" name="症狀" id="a10" value="哭泣卻沒有眼淚">哭泣卻沒有眼淚
+        <input type="checkbox" name="症狀" id="a11" value="食量減少">食量減少
+        <br><br>
 
+        體溫:
+        <input type="text" name="體溫" id="體溫" size="10" /><br>
+        <br>
+        有無腹瀉:<br>
+        <input type="radio" name="有無腹瀉" id="YY" value="有" />有  次數:<input type="text" id="有無腹瀉" name="腹瀉次數" size="10" /><br>
+        <input type="radio" name="有無腹瀉" id="NN" value="無" />無<br>
+        <br>
+        家族病史或是曾經生過什麼重病:<br>
+        <input type="text" name="家族病史或是曾經生過什麼重病" id="家族病史或是曾經生過什麼重病" size="30" /><br>
+        <br>
+        有無藥物過敏:<br>
+        <input type="radio" name="有無藥物過敏" id="Y" value="有" />有
+        <input type="radio" name="有無藥物過敏" id="N" value="無" />無<br>
+        <br>
+        聯絡人:
+        <input type="text" name="聯絡人名字" id="聯絡人" size="10" /><br>
+        <br>
+        與孩童關係:
+        <input type="text" name="與孩童關係" id="與孩童關係" size="10" /><br>
+        <br>
+        連絡電話:
+        <input type="text" name="連絡電話" id="連絡電話" size="10" /><br>
+        <br>
 
-<input type="button" value="名字傳送(不能空白)" onClick="check()" /> &nbsp;&nbsp;&nbsp;
-<input type="button" value="電話傳送(只能填入數字)" onClick="check1()" /> &nbsp;&nbsp;&nbsp;
-<form action=""method="">
- <button type="button"/>
- </form>
+        <input type="button" value="名字傳送(不能空白)" onClick="check()" /> &nbsp;&nbsp;&nbsp;
+        <input type="button" value="電話傳送(只能填入數字)" onClick="check1()" /> &nbsp;&nbsp;&nbsp;
+        <form action="" method="">
+            <button type="button" />
+        </form>
+        <input type="button" value="顯示已填入的資料" onClick="check2()" /> &nbsp;&nbsp;&nbsp;
+        <input type="button" value="填入預設資料" onClick="load()" /> &nbsp;&nbsp;&nbsp;
+        <input type="submit" value="傳送所填寫的資料" /> &nbsp;&nbsp;&nbsp;
+        <input type="button" value="計算BMI" onClick="check3()" /> &nbsp;&nbsp;&nbsp;
+        <input type="button" value="將checkBoxs顯示成table" onclick='printChecked()'  />
 
-<input type="button" value="顯示已填入的資料" onClick="check2()" /> &nbsp;&nbsp;&nbsp;
-<input type="button" value="填入預設資料" onClick="load()" /> &nbsp;&nbsp;&nbsp;
-<input type="submit" value="傳送所填寫的資料" /> &nbsp;&nbsp;&nbsp;
-<input type="button" value="計算BMI" onClick="check3()" /> &nbsp;&nbsp;&nbsp;
+        <h4><a href="https://www.pediatr.org.tw/">小兒科相關參考網站</a>
 
-
-<h4><a href="https://www.pediatr.org.tw/">小兒科相關參考網站</a>
+            <table id="myTable"></table>
 </body>
 </html>
