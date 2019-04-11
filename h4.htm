@@ -15,13 +15,30 @@
     </style>
 </head>
     應診類別:
-<select>
+<select name="WWW">
     <option value="morning">日診</option>
     <option value="night">夜診</option>
     <option value="acute">急診</option>
 </select>
+
 <SCRIPT type="text/javascript">
-     //  <!-- 此check()函式在最後的「傳送」案鈕會用到 -->
+    //  <!-- 此check()函式在最後的「傳送」案鈕會用到 -->
+
+    key = new Array(3);
+    key[0] = new Array(3);
+   
+    key[0][0] = "morning";
+    key[0][1] = "night";
+    key[0][2] = "acute";
+
+    function Buildkey(num) {
+        document.orderForm1.WWW.selectedIndex = 0;
+        for (ctr = 0; ctr < key[num].length; ctr++) {
+            document.orderForm1.WWW.options[ctr] = new Option(key[num][ctr], key[num][ctr]);
+        }
+        document.orderForm1.WWW.length = key[num].length;
+    }
+
     function check() {
 
         if (reg.名字.value == "") {
@@ -194,37 +211,37 @@
             alert("身高輸入數字喔!!");
 
         }
-         if (isNaN(reg.體重.value)) {
+        if (isNaN(reg.體重.value)) {
             alert("體重只能輸入數字喔!!");
 
         }
         else
-    var h = document.getElementById("身高").value;
-    var w = document.getElementById("體重").value;
-    //alert(h + w);
-    var bmi = w /((h*0.01)*(h*0.01));
-    alert('您的BMI= '+bmi+'\n');
+            var h = document.getElementById("身高").value;
+        var w = document.getElementById("體重").value;
+        //alert(h + w);
+        var bmi = w / ((h * 0.01) * (h * 0.01));
+        alert('您的BMI= ' + bmi + '\n');
 
-}
+    }
     function printChecked() {
-       
-            var items = document.getElementsByName('症狀');
-            var selectedItems = "";
-            for (var i = 0; i < items.length; i++) {
-                if (items[i].type == 'checkbox' && items[i].checked == true)
-                    selectedItems += "症狀ID="+ items[i].id +"  "+"症狀Value="+ items[i].value + ',';
-            }
-            var table = document.getElementById("myTable");
-            for (var i = 1; i <= 1 ; i++) {
-                var row = table.insertRow(-1);
-                for (var j = 1; j <= 1; j++) {
-                    var cell = row.insertCell(-1);
-                    cell.innerHTML = selectedItems;
-                }
-            }
-        
+
+        var items = document.getElementsByName('症狀');
+        var selectedItems = "";
+        for (var i = 0; i < items.length; i++) {
+            if (items[i].type == 'checkbox' && items[i].checked == true)
+                selectedItems += "症狀ID=" + items[i].id + "  " + "症狀Value=" + items[i].value + ',';
         }
-    
+        var table = document.getElementById("myTable");
+        for (var i = 1; i <= 1 ; i++) {
+            var row = table.insertRow(-1);
+            for (var j = 1; j <= 1; j++) {
+                var cell = row.insertCell(-1);
+                cell.innerHTML = selectedItems;
+            }
+        }
+
+    }
+
 
 </SCRIPT>
 <body background="http://pic.616pic.com/bg_w1180/00/16/73/fqhM2Y7x0C.jpg">
